@@ -2,11 +2,17 @@ using Microsoft.Data.SqlClient;
 
 namespace LibraryMangementDAL
 {
+    /// <summary>
+    /// Provides data access methods for managing books in the database, including retrieving all books, retrieving
+    /// available books, adding new books, and deleting existing books.
+    /// </summary>
+    /// <remarks>This class interacts with the database to perform CRUD operations on the Books table. It
+    /// requires a valid database connection to function correctly. Ensure that the database schema matches the expected
+    /// structure for the methods to work as intended.</remarks>
     public class BookDAL
     {
-        // ================================================
-        // Get All Books
-        // ================================================
+        
+        // Get All Books      
         public List<(int Id, string Title, string Author, bool IsAvailable)> GetAllBooks()
         {
             var list = new List<(int, string, string, bool)>();
