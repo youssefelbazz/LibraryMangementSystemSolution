@@ -11,8 +11,7 @@ namespace LibraryMangementDAL
     /// structure for the methods to work as intended.</remarks>
     public class BookDAL
     {
-        
-        // Get All Books      
+     
         public List<(int Id, string Title, string Author, bool IsAvailable)> GetAllBooks()
         {
             var list = new List<(int, string, string, bool)>();
@@ -31,9 +30,6 @@ namespace LibraryMangementDAL
             return list;
         }
 
-        // ================================================
-        // Get Available Books using VIEW
-        // ================================================
         public List<(int Id, string Title, string Author)> GetAvailableBooks()
         {
             var list = new List<(int, string, string)>();
@@ -51,9 +47,6 @@ namespace LibraryMangementDAL
             return list;
         }
 
-        // ================================================
-        // Add Book
-        // ================================================
         public bool AddBook(string title, string author)
         {
             using SqlConnection conn = DBHelper.GetConnection();
@@ -67,9 +60,6 @@ namespace LibraryMangementDAL
             return cmd.ExecuteNonQuery() > 0;
         }
 
-        // ================================================
-        // Delete Book
-        // ================================================
         public bool DeleteBook(int bookId)
         {
             using SqlConnection conn = DBHelper.GetConnection();

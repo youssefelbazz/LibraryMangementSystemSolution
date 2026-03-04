@@ -6,25 +6,16 @@ namespace LibraryMangementBLL
     {
         private readonly BookDAL _bookDAL = new BookDAL();
 
-        // ================================================
-        // Get All Books
-        // ================================================
         public List<(int Id, string Title, string Author, bool IsAvailable)> GetAllBooks()
         {
             return _bookDAL.GetAllBooks();
         }
 
-        // ================================================
-        // Get Available Books (via View)
-        // ================================================
         public List<(int Id, string Title, string Author)> GetAvailableBooks()
         {
             return _bookDAL.GetAvailableBooks();
         }
 
-        // ================================================
-        // Add Book with validation
-        // ================================================
         public (bool Success, string Message) AddBook(string title, string author)
         {
             if (string.IsNullOrWhiteSpace(title))
@@ -39,9 +30,6 @@ namespace LibraryMangementBLL
                 : (false, "Failed to add book.");
         }
 
-        // ================================================
-        // Delete Book with validation
-        // ================================================
         public (bool Success, string Message) DeleteBook(int bookId)
         {
             if (bookId <= 0)

@@ -6,17 +6,11 @@ namespace LibraryMangementBLL
     {
         private readonly MemberDAL _memberDAL = new MemberDAL();
 
-        // ================================================
-        // Get All Members
-        // ================================================
         public List<(int Id, string FullName, string Phone)> GetAllMembers()
         {
             return _memberDAL.GetAllMembers();
         }
 
-        // ================================================
-        // Add Member with validation
-        // ================================================
         public (bool Success, string Message) AddMember(string fullName, string phone)
         {
             if (string.IsNullOrWhiteSpace(fullName))

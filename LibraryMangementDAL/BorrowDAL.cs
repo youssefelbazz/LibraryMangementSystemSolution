@@ -4,9 +4,7 @@ namespace LibraryMangementDAL
 {
     public class BorrowDAL
     {
-        // ================================================
-        // Borrow Book — SP_BorrowBook + Trigger
-        // ================================================
+
         public (bool Success, string Message) BorrowBook(int bookId, int memberId)
         {
             try
@@ -28,9 +26,6 @@ namespace LibraryMangementDAL
             }
         }
 
-        // ================================================
-        // Return Book — SP_ReturnBook
-        // ================================================
         public (bool Success, string Message) ReturnBook(int borrowId)
         {
             try
@@ -51,9 +46,6 @@ namespace LibraryMangementDAL
             }
         }
 
-        // ================================================
-        // Get Active Borrows
-        // ================================================
         public List<(int BorrowId, string BookTitle, string MemberName, DateTime BorrowDate)> GetActiveBorrows()
         {
             var list = new List<(int, string, string, DateTime)>();

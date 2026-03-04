@@ -4,9 +4,6 @@ namespace LibraryMangementDAL
 {
     public class MemberDAL
     {
-        // ================================================
-        // Get All Members
-        // ================================================
         public List<(int Id, string FullName, string Phone)> GetAllMembers()
         {
             var list = new List<(int, string, string)>();
@@ -24,9 +21,6 @@ namespace LibraryMangementDAL
             return list;
         }
 
-        // ================================================
-        // Add Member
-        // ================================================
         public bool AddMember(string fullName, string phone)
         {
             using SqlConnection conn = DBHelper.GetConnection();
